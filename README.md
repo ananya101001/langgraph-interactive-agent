@@ -32,84 +32,45 @@ graph TD
 ```
 
  
-Key Concepts Demonstrated
-Human-in-the-Loop: The agent uses LangGraph's interrupt and checkpointing features to pause execution and wait for user feedback, creating a collaborative workflow.
-Stateful Conversations: A MemorySaver checkpointer, persisted in Streamlit's session state, allows the graph to maintain a continuous memory across multiple user interactions.
-UI Integration: The agent's core logic (agent.py) is cleanly decoupled from the user interface (app.py), which is a best practice for application design.
-Robust Agent Behavior: The agent is driven by a strict, process-oriented system prompt that minimizes hallucinations and enforces a step-by-step workflow (Clarify -> Flights -> Hotels -> Activities -> Final Plan).
-Tech Stack
-Framework: LangGraph, LangChain
-UI: Streamlit
-LLM Provider: Groq
-LLM: Llama 3.1 8B (llama-3.1-8b-instant)
-Tools: Tavily Search API
-Environment Management: Python venv, python-dotenv
-Setup and Usage
-Clone the repository:
- code Bash
-downloadcontent_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+## Key Concepts Demonstrated
+*   **Human-in-the-Loop:** The agent uses LangGraph's interrupt and checkpointing features to pause execution and wait for user feedback, creating a collaborative workflow.
+*   **Stateful Conversations:** A `MemorySaver` checkpointer, persisted in Streamlit's session state, allows the graph to maintain a continuous memory across multiple user interactions.
+*   **UI Integration:** The agent's core logic (`agent.py`) is cleanly decoupled from the user interface (`app.py`), which is a best practice for application design.
+*   **Robust Agent Behavior:** The agent is driven by a strict, process-oriented system prompt that minimizes hallucinations and enforces a step-by-step workflow (Clarify -> Flights -> Hotels -> Activities -> Final Plan).
+
+## Tech Stack
+*   **Framework:** LangGraph, LangChain
+*   **UI:** Streamlit
+*   **LLM Provider:** Groq
+*   **LLM:** Llama 3.1 8B (`llama-3.1-8b-instant`)
+*   **Tools:** Tavily Search API
+*   **Environment Management:** Python venv, python-dotenv
+
+## Setup and Usage
+
+1.  **Clone the repository:**
+    ```bash
     git clone https://github.com/ananya101001/langgraph-interactive-agent.git
-cd langgraph-interactive-agent
- 
-Create a virtual environment and install dependencies:
- code Bash
-downloadcontent_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+    cd langgraph-interactive-agent
+    ```
+
+2.  **Create a virtual environment and install dependencies:**
+    ```bash
     python -m venv venv
-source ven/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
- 
-Set up your API keys:
-Create a file named .env in the root directory. This file is ignored by Git and will not be uploaded.
-Add your API keys to it:
-code Code
-downloadcontent_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    pip install -r requirements.txt
+    ```
+
+3.  **Set up your API keys:**
+    *   Create a file named `.env` in the root directory. This file is ignored by Git and will not be uploaded.
+    *   Add your API keys to it:
+    ```
     GROQ_API_KEY="gsk_..."
-TAVILY_API_KEY="tvly-..."
- 
-Run the application:
- code Bash
-downloadcontent_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+    TAVILY_API_KEY="tvly-..."
+    ```
+
+4.  **Run the application:**
+    ```bash
     streamlit run app.py
- 
- Your browser will open to the chat interface automatically.
-code Code
-downloadcontent_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-   ---
-
-### **Final Step: Push Your Updated README to GitHub**
-
-After you have saved the new content in your `README.md` file, you need to upload it to your GitHub repository.
-
-1.  **Open your terminal** in the project directory.
-2.  **Add the changed file:**
-    ```bash
-    git add README.md
     ```
-3.  **Commit the change:**
-    ```bash
-    git commit -m "docs: Finalize and complete README with all sections"
-    ```
-4.  **Push the commit:**
-    ```bash
-    git push origin main
-    ```
-
-Now your GitHub repository will have a complete, professional, and well-documented portfolio piece.
- 
-
-
+    Your browser will open to the chat interface automatically.
